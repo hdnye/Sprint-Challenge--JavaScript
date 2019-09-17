@@ -46,7 +46,10 @@ console.log(consume("Mary", "Poppins", greeting)); // Hello Mary Poppins, nice t
 
 // Explain in your own words why nestedfunction can access the variable internal.
 
+ 
 // Explanation: 
+
+/* Variables called w/in a function are only available w/in that function's {} and is known as a block-scope variable. A variable can look outward but can never look inward and values can't be passed up, only down.  */
 
 
 const external = "I'm outside the function";
