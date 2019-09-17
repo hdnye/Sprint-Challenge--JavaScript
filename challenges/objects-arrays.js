@@ -17,8 +17,10 @@ const tRex = {
   period: 'Late Cretaceous',
   weight: '7000kg',
   length: '12m',
-  roar: `RAWERSRARARWERSARARARRRR!`
-  
+  // roar: `RAWERSRARARWERSARARARRRR!`,
+   roar: function() {
+      console.log(`Trex says "Rawwwr!!`);
+   }
  };
 
 const stegosaurus = {
@@ -56,7 +58,7 @@ console.log(tRex.period);
 
 // let rawr = `RAWERSRARARWERSARARARRRR!`;
 
-console.log(tRex.roar);
+tRex.roar();
 
 // ==== Arrays ====
 
@@ -109,17 +111,16 @@ graduates.map(element => {
   console.log(contactInfo);
 
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called unisWithUni that contains them all. This will be an array of objects. Log the result. */
-const unisWithUni = []
-
-// console.log(unisWithUni);
+const unisWithUni = [];
 
 graduates.map(element => {
      
-  if(element.university.includes('uni')) {
+  if(element.university.includes('Uni')) {
     unisWithUni.push({
       element: element.university
+      
   })
-  return `${element.university}`;
+  return element;  
  }
 });
 
@@ -149,10 +150,8 @@ The zoos want to display both the scientific name and the animal name in front o
 
 */
 const displayNames = [];
-console.log(displayNames);
 
-
-zooAnimals.map(element => {
+zooAnimals.forEach(element => {
   displayNames.push ({
     animal_name: element.animal_name,
     scientific_name: element.scientific_name
@@ -170,10 +169,9 @@ The zoos need a list of all their animal's names (animal_name only) converted to
 
 */
 
-const lowCaseAnimalNames = [];
 
-zooAnimals.push(element => {
-  lowCaseAnimalNames.map({})
+const lowCaseAnimalNames = zooAnimals.map((element) => {
+  
      return `${element.animal_name.toLowerCase()}`
 
 });
